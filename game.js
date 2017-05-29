@@ -33,7 +33,7 @@ function hide (evt) {
   updateCounts()
 
 }
-// CREATE FUNCTION hide HERE
+
 
 function updateCounts () {
   var totals = {
@@ -41,7 +41,18 @@ function updateCounts () {
     green: 0,
     invisible: 0
   }
-
+  var dotsArray = document.getElementsByClassName('board')[0].children
+  for (i=0; i < dotsArray.length; i++) {
+    if (dotsArray[i].classList.contains('blue')) {
+      totals.blue++
+    }
+    if (dotsArray[i].classList.contains('green')) {
+      totals.green++
+    }
+    if (dotsArray[i].classList.contains('invisible')) {
+      totals.invisible++
+    }
+  }
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
 
   // Once you've done the counting, this function will update the display
